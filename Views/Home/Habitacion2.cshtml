@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Habitacion2";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/habitacion2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+</head>
+
+<p class="introduccion">Al llegar al vestuario te encontras con cinco camisetas colgadas. Rápidamente, tus ojos se posan en una caja fuerte con un codigo numerico. Lleno de curiosidad y con la esperanza de que su contenido te ayude a salir del estadio, intentas adivinarlo.</p>
+
+<div class="camisetas">
+    <img src="~/images/camiseta_barco.png" alt="Camiseta Barco">
+    <img src="~/images/camiseta_varela.png" alt="Camiseta Varela">
+    <img src="~/images/camiseta_medina.png" alt="Camiseta Medina">
+    <img src="~/images/camiseta_payero.png" alt="Camiseta Payero">
+    <img src="~/images/camiseta_langoni.png" alt="Camiseta Langoni">
+</div>
+
+<p class="consigna">Tienes el presentimiento de que las camisetas tienen algo que ver con la caja fuerte. Introduce el código para abrirla</p>
+
+
+<form method="post" action='@Url.Action("Habitacion")'>
+    <input type="text" name="clave" class="respuesta" required>
+    <input type="hidden" name="sala" value=2>
+    <button type="submit" value="Enviar" class="botonEnviar"><span class="material-symbols-outlined size-40">send</span></button>
+</form>
+
+<div class="pistas">
+    <button onclick="alert('Pista 1: Mira los numeros de las camisetas.')" id="pista1">Pista 1</button>
+    <button onclick="alert('Pista 2: Suma los numeros de las camisetas para obtener la respuesta.')" id="pista2">Pista 2</button>
+</div>
+
+<script>
+    document.getElementById("pista1").addEventListener("click", function () {
+        document.getElementById("pista1").disabled = true;
+        @Escape.pistasUsadas++;
+    });
+    document.getElementById("pista2").addEventListener("click", function () {
+        document.getElementById("pista2").disabled = true;
+        @Escape.pistasUsadas++;
+    });
+</script>

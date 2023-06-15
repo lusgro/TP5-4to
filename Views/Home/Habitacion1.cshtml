@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Habitacion1";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/habitacion1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+</head>
+
+
+<p class="introduccion">Te diriges al palco de Maradona con determinación, con la sensacion de que ahí podrías encontrar pistas cruciales para tu escape. Al llegar, tus ojos se posan en una sopa de letras cuidadosamente dispuesta sobre la mesa. La leyenda inscrita en la parte superior de la hoja dice: <i>"La primera letra de cada palabra que encuentres es una de las claves para el candado con la llave de los vestuarios"</i>.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>O</td><td>E</td><td>I</td><td>W</td><td>V</td><td>W</td><td>Z</td><td>O</td><td>B</td><td>E</td>
+        </tr>
+        <tr>
+            <td>I</td><td>N</td><td>Y</td><td>X</td><td>D</td><td>I</td><td>Z</td><td>L</td><td>L</td><td>R</td>
+        </tr>
+        <tr>
+            <td>R</td><td>X</td><td>O</td><td>R</td><td>A</td><td>I</td><td>R</td><td>A</td><td>Y</td><td>O</td>
+        </tr>
+        <tr>
+            <td>O</td><td>G</td><td>R</td><td>M</td><td>L</td><td>A</td><td>V</td><td>R</td><td>T</td><td>O</td>
+        </tr>
+        <tr>
+            <td>M</td><td>P</td><td>B</td><td>L</td><td>F</td><td>N</td><td>W</td><td>V</td><td>E</td><td>N</td>
+        </tr>
+        <tr>
+            <td>A</td><td>W</td><td>E</td><td>O</td><td>T</td><td>M</td><td>I</td><td>O</td><td>N</td><td>Y</td>
+        </tr>
+        <tr>
+            <td>N</td><td>M</td><td>E</td><td>I</td><td>R</td><td>V</td><td>P</td><td>J</td><td>Q</td><td>Q</td>
+        </tr>
+        <tr>
+            <td>I</td><td>M</td><td>T</td><td>N</td><td>O</td><td>R</td><td>T</td><td>A</td><td>P</td><td>F</td>
+        </tr>
+        <tr>
+            <td>C</td><td>A</td><td>F</td><td>R</td><td>B</td><td>E</td><td>I</td><td>J</td><td>Z</td><td>V</td>
+        </tr>
+        <tr>
+            <td>N</td><td>F</td><td>S</td><td>J</td><td>J</td><td>E</td><td>Y</td><td>O</td><td>Z</td><td>M</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="consigna">¿Qué palabras has encontrado? Ingresa las iniciales de cada una, ordenadas de manera alfabetica.</p>
+
+<form method="post" action='@Url.Action("Habitacion")'>
+    <input class="respuesta" placeholder="Ingresa la respuesta..." type="text" name="clave" required>
+    <input type="hidden" name="sala" value=1>
+    <button type="submit" value="Enviar" class="botonEnviar"><span class="material-symbols-outlined size-40">send</span></button>
+</form>
+
+<div class="pistas">
+    <button onclick="alert('Pista 1: Son 6 palabras.')" id="pista1">Pista 1</button>
+    <button onclick="alert('Pista 2: Todas las palabras son apodos de jugadores historicos del club de La Ribera.')" id="pista2">Pista 2</button>
+</div>
+
+<script>
+    document.getElementById("pista1").addEventListener("click", function () {
+        document.getElementById("pista1").disabled = true;
+        @Escape.pistasUsadas++;
+    });
+    document.getElementById("pista2").addEventListener("click", function () {
+        document.getElementById("pista2").disabled = true;
+        @Escape.pistasUsadas++;
+    });
+</script>
+
+<h2 class="error">@ViewBag.Error</h2>

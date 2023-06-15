@@ -1,0 +1,66 @@
+@{
+    ViewData["Title"] = "Habitacion3";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/css/habitacion3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+</head>
+
+<p class="introduccion">En el camino a tu salida, te topás con un espiritu bostero que accede a dejarte continuar tu rumbo si contestas correctamente algunas preguntas.</p>
+
+<div class="preguntas">
+    <p>
+        1. ¿Quién es el jugador con más partidos en Boca?
+        a. Silvio Marzolini
+        b. Hugo Orlando Gatti
+        c. Roberto Mouzo
+        d. Carlos Fernando Navarro Montoya
+    </p>
+    <p>
+        2. ¿Quién es el jugador con más títulos en Boca?
+        a. Guillermo Barros Schelotto
+        b. Sebastián Battaglia
+        c. Carlos Tevez
+        d. Juan Román Riquelme
+    </p>
+    <p>
+        3. ¿Cuántos goles le convirtió Diego Maradona a River en superclásicos oficiales?
+        a. 5
+        b. 3
+        c. 1
+        d. 7
+    </p>
+    <p>
+        4. ¿Quién es el máximo goleador de Boca en Copa Libertadores?
+        a. Martín Palermo
+        b. Carlos Tevez
+        c. Rodrigo Palacio
+        d. Juan Román Riquelme
+    </p>
+</div>
+
+<p class="consigna">Dado tu amplio conocimiento bostero, estas preguntas seran muy sencillas. Introduce la letra de la opcion que creas correcta (ejemplo: abcd).</p>
+
+<form method="post" action='@Url.Action("Habitacion")'>
+    <input type="text" name="clave" class="respuesta" required>
+    <input type="hidden" name="sala" value=3>
+    <button type="submit" value="Enviar" class="botonEnviar"><span class="material-symbols-outlined size-40">send</span></button>
+</form>
+
+<div class="pistas">
+    <button onclick="alert('Pista 1: Las letras de las opciones no se repiten.')" id="pista1">Pista 1</button>
+    <button onclick="alert('Pista 2: Inverti dabc')" id="pista2">Pista 2</button>
+</div>
+
+<script>
+    document.getElementById("pista1").addEventListener("click", function () {
+        document.getElementById("pista1").disabled = true;
+        @Escape.pistasUsadas++;
+    });
+    document.getElementById("pista2").addEventListener("click", function () {
+        document.getElementById("pista2").disabled = true;
+        @Escape.pistasUsadas++;
+    });
+</script>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <header>
+        <div class="menu">
+            <p><a href='@Url.Action("Index")'>Inicio</a></p>
+            <p><a href='@Url.Action("Tutorial")'>Tutorial</a></p>
+            <p><a href='@Url.Action("Creditos")'>Creditos</a></p>
+        </div>
+
+        <div id="timer"></div>
+
+        <div class="menu__toggler"><span></span></div>
+        <script>
+            const toggler = document.querySelector(".menu__toggler");
+            const menu = document.querySelector(".menu");
+
+            toggler.addEventListener("click", () => {
+            toggler.classList.toggle("active");
+            menu.classList.toggle("active");
+            });
+        </script>
+    </header>
+    <body>
+        <div style="padding:20px 10px 0px 10px;">
+            @RenderBody()
+        </div>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+
+    <script>
+        window.onload = function() {
+            startTimer();
+        };
+    </script>
+
+    <div class="divFullscreen">
+        <button class="botonFullscreen" onclick="alternarFullscreen()"><span class="material-icons yellow600">fullscreen</span></button>
+        
+        <script>
+        function alternarFullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+            document.exitFullscreen(); 
+            }
+        }
+        }
+        </script>
+    </div>
+</html>

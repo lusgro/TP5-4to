@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/index.css" />
+
+<header>
+    <h1 class="titulo">Escape de la Bombonera</h1>
+</header>
+<body>
+    <ul>
+        <li class="principal"><a href='@Url.Action("Transicion", new { sala = 1 })'><button id="comenzar"><span>Comenzar</span></button></a></li>
+        <li class="secundario"><a href='@Url.Action("Tutorial")'><button><span>Tutorial</span></button></a></li>
+        <li class="secundario"><a href='@Url.Action("Creditos")'><button><span>Créditos</span></button></a></li>
+    </ul>
+</body>
+
+<script>
+    document.getElementById("comenzar").addEventListener("click", function () {
+        localStorage.removeItem("startTime");
+    });
+</script>

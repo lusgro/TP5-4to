@@ -1,0 +1,124 @@
+html {
+    box-sizing: border-box;
+    padding: 2%;
+    background-image: url("../images/fondo_habitacion2.png");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+}
+
+.introduccion {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.5%;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.camisetas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consigna {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 200;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 0.1%;
+    text-align: center;
+    line-height: 1;
+}
+
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5%;
+}
+
+.respuesta {
+    color: #fff;
+    background-color: transparent;
+    font-size: 30px;
+    max-width: 300px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #103f79;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #fbc02d;
+}
+
+.respuesta::placeholder {
+    color: #fff
+}
+
+.respuesta:focus {
+    color: #fff;
+    font-size: 30px;
+    background-color: transparent;
+    outline-color: #103f79;
+    box-shadow: -3px -3px 15px #103f79;
+    transition: .1s;
+    transition-property: box-shadow;
+}
+
+.botonEnviar {
+    border: transparent;
+    background: #103f79;
+    box-shadow: 0 0 25px #103f79;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+.botonEnviar:hover {
+    box-shadow: 0 0 5px #103f79,
+    0 0 25px #103f79,
+    0 0 50px #103f79,
+    0 0 100px #103f79;
+    border-radius: 15px;
+}
+
+span.size-40 {
+    font-size: 40px;
+    font-variation-settings: 'OPSZ' 40;
+    color: #fff;
+}
+
+.pistas button {
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #fbc02d, #103f79);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+    margin-right: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.pistas button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;}
+
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #103f79;
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+}

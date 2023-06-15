@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Habitacion4";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/habitacion4.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+</head>
+
+<p class="introduccion">Por fin has llegado. Te encuentras frente a la puerta que da al barrio de La Boca. Tu último obstáculo es un extraño candado.</p>
+
+<div id="puzzle_container">
+    <div class="puzzle_block">1</div>
+    <div class="puzzle_block">2</div>
+    <div class="puzzle_block">3</div>
+    <div class="puzzle_block">4</div>
+    <div class="puzzle_block">5</div>
+    <div class="puzzle_block">6</div>
+    <div class="puzzle_block">7</div>
+    <div class="puzzle_block">8</div>
+</div>
+
+<p class="consigna">Intuitivamente, te dispones a intentar ordenar los números. Te sientes muy cerca de tu escape. Sería una pena que faltase la profesora de matemática...</p>
+
+<script src="~/js/puzzle_game.js"></script>
+
+<form method="post" action='@Url.Action("Habitacion")'>
+    <input type="hidden" name="sala" value=4>
+    <input type="hidden" name="clave" value="4">
+    <button type="submit" value="Enviar" class="botonContinuar" id="botonContinuar">Continuar</button>
+</form>
